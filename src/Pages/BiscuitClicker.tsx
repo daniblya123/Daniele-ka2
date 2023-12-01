@@ -1,20 +1,18 @@
-// BiscuitClickerLayout.js
-
 import { createContext, useState } from "react";
 import BiscuitImage from "../assets/BiscuitImage.png";
 import "./BiscuitClickerLayout.css";
 import Navbar from "../Navbar";
 
-export const ContextNumber = createContext<number | undefined>(undefined);
+export const ContextNumber = createContext();
 
 function BiscuitClicker() {
   const [biscuitMultiplier, setBiscuitMultiplier] = useState(1);
-  const [biscuitNumber, setBiscuitNumber] = useState(0);
+  const [biscuitNumber, setBiscuitNumber] = useState(99);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleImagePressed = () => {
     setBiscuitNumber(
-      (prevBiscuitNumber) => prevBiscuitNumber + biscuitMultiplier
+      prevBiscuitNumber => prevBiscuitNumber + biscuitMultiplier
     );
   };
 
@@ -22,8 +20,8 @@ function BiscuitClicker() {
     if (biscuitNumber < 100) {
       setErrorMessage("Not Enough Funds");
     } else {
-      setBiscuitNumber((biscuitNumber) => biscuitNumber - 100);
-      setBiscuitMultiplier((biscuitMultiplier) => biscuitMultiplier + 1);
+      setBiscuitNumber(biscuitNumber => biscuitNumber - 100);
+      setBiscuitMultiplier(biscuitMultiplier => biscuitMultiplier + 1);
       setErrorMessage("");
     }
   };
