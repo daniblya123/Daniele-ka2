@@ -1,5 +1,7 @@
-function TemperatureChecker(){
-    return("TemperatureChecker")
+import axios from "axios";
+
+function TemperatureChecker() {
+  return "TemperatureChecker";
 }
 
 export default TemperatureChecker;

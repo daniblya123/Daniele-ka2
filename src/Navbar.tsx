@@ -1,23 +1,27 @@
-import {Link, NavLink} from "react-router-dom"
-import "./NavbarLayout.css"
+import { Link, NavLink } from "react-router-dom";
+import { useState, useContext, createContext } from "react";
+import "./NavbarLayout.css";
+import { ContextNumber } from "./Pages/BiscuitClicker";
 
-function Navbar(){
-    let buscuitNum = 1000
-    return(<>
-    <nav className="navbar">
-        <Link to="/" className="title-navbar">Home</Link>
+function Navbar() {
+  const biscuitNumber = useContext(ContextNumber);
+  return (
+    <>
+      <nav className="navbar">
+        <Link to="/" className="title-navbar">
+          Home
+        </Link>
         <ul>
-            <li>
-                <NavLink to="/BiscuitClicker">BiscuitClicker</NavLink>
-            </li>
-            <li>
-                <NavLink to="TemperatureChecker">TemperatureChecker</NavLink>
-            </li>
-            <a className="no-hover" >Biscuit Number: {buscuitNum}</a>
+          <li>
+            <NavLink to="/BiscuitClicker">BiscuitClicker</NavLink>
+          </li>
+          <li>
+            <NavLink to="TemperatureChecker">TemperatureChecker</NavLink>
+          </li>
+          <a className="no-hover">Biscuit Number: {biscuitNumber}</a>
         </ul>
-    </nav>
-
-
-    </>)
+      </nav>
+    </>
+  );
 }
 export default Navbar;
