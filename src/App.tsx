@@ -11,14 +11,14 @@ function App() {
   return (<>
     
     <Navbar />
-    <div className='RoutesStyle'>
+    
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/BiscuitClicker" element={<BiscuitClicker/>}/>
       <Route path="/TemperatureChecker" element={<TemperatureChecker/>}/>
       <Route path="*" element={<Error />}/>
     </Routes>
-    </div>
+    
     </>)
 }
 
