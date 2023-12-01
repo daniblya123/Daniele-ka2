@@ -1,9 +1,11 @@
 import {Link, NavLink} from "react-router-dom"
+import "./NavbarLayout.css"
+
 function Navbar(){
-    let buscuitNum = 100
+    let buscuitNum = 1000
     return(<>
     <nav className="navbar">
-        <Link to="/">Home</Link>
+        <Link to="/" className="title-navbar">Home</Link>
         <ul>
             <li>
                 <NavLink to="/BiscuitClicker">BiscuitClicker</NavLink>
@@ -11,7 +13,7 @@ function Navbar(){
             <li>
                 <NavLink to="TemperatureChecker">TemperatureChecker</NavLink>
             </li>
-            <a>Biscuit Number: {buscuitNum}</a>
+            <a className="no-hover" >Biscuit Number: {buscuitNum}</a>
         </ul>
     </nav>
 
