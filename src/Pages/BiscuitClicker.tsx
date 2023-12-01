@@ -7,7 +7,7 @@ export const ContextNumber = createContext();
 
 function BiscuitClicker() {
   const [biscuitMultiplier, setBiscuitMultiplier] = useState(1);
-  const [biscuitNumber, setBiscuitNumber] = useState(99);
+  const [biscuitNumber, setBiscuitNumber] = useState();
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleImagePressed = () => {
